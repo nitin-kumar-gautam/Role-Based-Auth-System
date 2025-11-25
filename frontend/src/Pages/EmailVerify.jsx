@@ -46,7 +46,7 @@ const EmailVerify = () => {
 
       axios.defaults.withCredentials = true; 
 
-      const {data} = await axios.post(backendurl + 'api/auth/verify-email', {otp})
+      const {data} = await axios.post(backendurl + '/api/auth/verify-email', {otp})
 
       if(data.success){
         toast.success(data.message)

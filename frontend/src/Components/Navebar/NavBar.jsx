@@ -13,7 +13,7 @@ const NavBar = () => {
   const sendVerificationOtp = async ()=>{
     try {
         axios.defaults.withCredentials = true;
-        const {data} = await axios.post(backendurl + 'api/auth/send-verify-otp')
+        const {data} = await axios.post(backendurl + '/api/auth/send-verify-otp')
         
         if(data.success){
           toast.success(data.message)
@@ -29,7 +29,7 @@ const NavBar = () => {
   const logout = async ()=>{
     try {
         axios.defaults.withCredentials = true;
-        const {data} = await axios.post(backendurl + 'api/auth/logout')
+        const {data} = await axios.post(backendurl + '/api/auth/logout')
         data.success && setLoggedin(false)
         data.success && setUserData(false)
         toast.success(data.message)

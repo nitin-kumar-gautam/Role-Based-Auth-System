@@ -23,7 +23,7 @@ const Login = () => {
       axios.defaults.withCredentials = true
 
       if(state === 'Sign Up'){
-        const {data} = await axios.post(backendurl + 'api/auth/register', {username: name, email, password}) 
+        const {data} = await axios.post(backendurl + '/api/auth/register', {username: name, email, password}) 
         
         if(data.success){
           setLoggedin(true)
@@ -33,7 +33,7 @@ const Login = () => {
           toast.error(data.message)
         }
       }else{
-        const {data} = await axios.post(backendurl + 'api/auth/login', { email, password}) 
+        const {data} = await axios.post(backendurl + '/api/auth/login', { email, password}) 
         
         if(data.success){
           setLoggedin(true)
