@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({origin:[
     "http://localhost:5173",
-    "https://role-based-auth-system-5efj.vercel.app"
+    process.env.CLIENT_URI
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true}))
