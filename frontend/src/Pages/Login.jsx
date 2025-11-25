@@ -40,6 +40,7 @@ const Login = () => {
           toast.success(data.message)
           getUserData()
           navigate('/')
+          document.cookie(data?.data?.token)
         }else{
           toast.error(data.message)
         }

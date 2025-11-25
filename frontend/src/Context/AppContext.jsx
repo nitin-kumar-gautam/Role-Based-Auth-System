@@ -32,7 +32,7 @@ export const AppContextProvider = (props)=>{
      const getUserData = async ()=>{
         try {
             axios.defaults.withCredentials = true;
-            const {data} = await axios.get(backendurl + '/api/user/data' , {withCredentials: true})
+            const {data} = await axios.get(backendurl + '/api/user/data')
             data.success ? setUserData(data.userData) : toast.error(data.message)
         } catch (error) {
             toast.error(error.message)
