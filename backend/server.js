@@ -15,13 +15,15 @@ const PORT = process.env.PORT || 5000;
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors({origin:[
+app.use(cors({
+  origin: [
     "http://localhost:5173",
     "https://role-based-auth-system-eight.vercel.app"
   ],
-  credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
-}))
+  credentials: true
+}));
+
 
 app.use(express.urlencoded({ extended: true}))
 
