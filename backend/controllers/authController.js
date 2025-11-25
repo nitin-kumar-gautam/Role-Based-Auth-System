@@ -90,14 +90,17 @@ export const userLogin = async (req, res) => {
       expiresIn: "2d",
     });
 
-    // res.cookie("token", token, {
-    //   httpOnly: true,
-    //   // secure: process.env.NODE_ENV === "Production",
-    //   secure:true,
-    //   // sameSite: process.env.NODE_ENV === "Production" ? "none" : "strict",
-    //   sameSite: "none",
-    //   maxAge: 7 * 24 * 60 * 60 * 1000,
-    // });
+    
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      // secure: process.env.NODE_ENV === "Production",
+      secure:true,
+      // sameSite: process.env.NODE_ENV === "Production" ? "none" : "strict",
+      sameSite: "none",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    });
+
 
     return res.status(201).json({
       success: true,

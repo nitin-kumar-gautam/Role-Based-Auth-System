@@ -40,7 +40,14 @@ const Login = () => {
           toast.success(data.message)
           getUserData()
           navigate('/')
-          document.cookie(data?.data?.token)
+    //       document.cookie(data?.data?.token ,  {
+    //   httpOnly: true,
+    //   // secure: process.env.NODE_ENV === "Production",
+    //   secure:true,
+    //   // sameSite: process.env.NODE_ENV === "Production" ? "none" : "strict",
+    //   sameSite: "none",
+    //   maxAge: 7 * 24 * 60 * 60 * 1000,
+    //  })
         }else{
           toast.error(data.message)
         }
